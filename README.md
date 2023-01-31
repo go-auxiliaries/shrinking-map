@@ -34,7 +34,7 @@ These are the benchmarks against `sync.Map`
 ```shell
 goos: linux
 goarch: amd64
-pkg: github.com/go-auxiliaries/go-shrinking-map/pkg/safe-tight-map
+pkg: github.com/go-auxiliaries/shrinking-map/pkg/safe-map
 cpu: 12th Gen Intel(R) Core(TM) i9-12900HK
 Benchmark_Set_Tight_Nonexisting-20                         44162             33461 ns/op
 Benchmark_Set_Sync_Nonexisting-20                          24254             49771 ns/op
@@ -63,7 +63,7 @@ Benchmark_GetOrSet_Sync_Existing_Parallel-20               14742             706
 Benchmark_Mixed_Tight_Parallel-20                          29206             38757 ns/op
 Benchmark_Mixed_Sync_Parallel-20                           18379             89391 ns/op
 PASS
-ok      github.com/go-auxiliaries/go-shrinking-map/pkg/safe-tight-map   88.683s
+ok      github.com/go-auxiliaries/shrinking-map/pkg/safe-map   88.683s
 
 ```
 
