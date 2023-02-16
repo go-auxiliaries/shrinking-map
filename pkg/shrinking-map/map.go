@@ -62,6 +62,10 @@ func (m *Map[T, V]) GetAndDelete(key T) (V, bool) {
 	return v, false
 }
 
+func (m *Map[T, V]) Values() map[T]V {
+	return m.values
+}
+
 func (m *Map[T, V]) Shrink() {
 	var newValues map[T]V
 	if uint64(len(m.values)) >= m.deleted {
