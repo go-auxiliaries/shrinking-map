@@ -80,3 +80,11 @@ func (m *Map[T, V]) Shrink() {
 	m.values = newValues
 	m.deleted = 0
 }
+
+func (m *Map[T, V]) SetLimit(limit uint64) {
+	m.limit = limit
+}
+
+func (m *Map[T, V]) GetLimit() uint64 {
+	return m.limit
+}

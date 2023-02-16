@@ -2,6 +2,7 @@ package safe_map
 
 import (
 	"sync"
+	"sync/atomic"
 )
 
 // Map - map implementation that shrinks automatically once limit of deleted elements reaches the limit
@@ -133,4 +134,12 @@ func (m *Map[T, V]) addDeleted(n uint64) {
 	if m.limit != 0 && m.deleted > m.limit {
 		go m.Shrink()
 	}
+}
+
+func (m *Map[T, V]) SetLimit(limit uint64) {
+	atomic.StoreUint64(&m.limit, limit)
+}
+
+func (m *Map[T, V]) GetLimit() uint64 {
+	return atomic.LoadUint64(&m.limit)
 }
